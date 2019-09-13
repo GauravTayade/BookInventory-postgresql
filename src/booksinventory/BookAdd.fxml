@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="623.0" prefWidth="1011.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="booksinventory.BookAddController">
+   <children>
+      <TitledPane animated="false" prefHeight="623.0" prefWidth="1011.0" text="Add Book">
+        <content>
+          <AnchorPane fx:id="ttPnAddBook" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <VBox prefHeight="588.0" prefWidth="1011.0">
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fx:id="imgAddBookHeader" fitHeight="150.0" fitWidth="191.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/add-book.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="lblAddBookHeader" text="Add New Book Record">
+                                 <font>
+                                    <Font name="Bookshelf Symbol 7" size="54.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets bottom="20.0" left="165.0" right="20.0" top="50.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="437.0" prefWidth="1011.0">
+                           <children>
+                              <VBox prefHeight="417.0" prefWidth="523.0">
+                                 <children>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="lblBookTitle" text="Book Title">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="20.0" top="35.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="txtBookTitle" prefHeight="31.0" prefWidth="331.0" promptText="Book Title">
+                                             <HBox.margin>
+                                                <Insets left="50.0" top="35.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="lblBookAuthour" text="Book Authour">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="20.0" top="35.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="txtBookAuthour" prefHeight="31.0" prefWidth="240.0" promptText="Book Authour">
+                                             <HBox.margin>
+                                                <Insets left="10.0" top="35.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="lblBookYear" text="Book Year">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="20.0" top="35.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="txtBookYear" prefHeight="31.0" prefWidth="240.0" promptText="Book Year">
+                                             <HBox.margin>
+                                                <Insets left="40.0" top="35.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Button fx:id="btnAddBook" alignment="CENTER" mnemonicParsing="false" onAction="#btnAddBookClick" prefHeight="78.0" prefWidth="183.0" text="Save">
+                                             <graphic>
+                                                <ImageView fx:id="imgBtnSave" fitHeight="68.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../images/save.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <font>
+                                                <Font size="25.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="150.0" top="10.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="417.0" prefWidth="485.0">
+                                 <children>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="lblBookPrice" text="Book Price">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="10.0" top="35.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="txtBookPrice" prefHeight="31.0" prefWidth="170.0" promptText="Book Price">
+                                             <opaqueInsets>
+                                                <Insets />
+                                             </opaqueInsets>
+                                             <HBox.margin>
+                                                <Insets left="25.0" top="35.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="lblBookRating" text="Book Rating">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="10.0" top="35.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="txtBookRating" prefHeight="31.0" prefWidth="170.0" promptText="Book Rating">
+                                             <opaqueInsets>
+                                                <Insets />
+                                             </opaqueInsets>
+                                             <HBox.margin>
+                                                <Insets left="10.0" top="35.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="lblBookStatus" text="Book Status">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="10.0" top="35.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="txtBookStatus" promptText="Book Status 0/1">
+                                             <HBox.margin>
+                                                <Insets left="10.0" top="35.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Button fx:id="btnCancel" alignment="CENTER" mnemonicParsing="false" onAction="#btnCancelClick" prefHeight="78.0" prefWidth="183.0" text="Cancel">
+                                             <font>
+                                                <Font size="25.0" />
+                                             </font>
+                                             <graphic>
+                                                <ImageView fx:id="imgBtnCancel" fitHeight="68.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../images/cancel.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <HBox.margin>
+                                                <Insets left="150.0" top="10.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children></HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+        </content>
+      </TitledPane>
+   </children>
+</AnchorPane>

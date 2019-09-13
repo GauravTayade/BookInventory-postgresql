@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="dist/lib/javafx-swt.jar"/>
+	<classpathentry kind="lib" path="dist/lib/javafx.base.jar"/>
+	<classpathentry kind="lib" path="dist/lib/javafx.controls.jar"/>
+	<classpathentry kind="lib" path="dist/lib/javafx.fxml.jar"/>
+	<classpathentry kind="lib" path="dist/lib/javafx.graphics.jar"/>
+	<classpathentry kind="lib" path="dist/lib/javafx.media.jar"/>
+	<classpathentry kind="lib" path="dist/lib/javafx.swing.jar"/>
+	<classpathentry kind="lib" path="dist/lib/javafx.web.jar"/>
+	<classpathentry kind="lib" path="dist/lib/javax.mail.jar"/>
+	<classpathentry kind="lib" path="dist/lib/postgresql-42.2.6.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>
