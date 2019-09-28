@@ -74,23 +74,35 @@ public class BookEditController implements Initializable {
     @FXML
     private ImageView imgBtnCancel;
     
-    private int bookid;
-    
     DB db = new DB();
+    
+    @FXML
+    private Label lblBookId;
+    
+    private int bookid;
 
+    public int getBookid() {
+        return bookid;
+    }
+
+    public void setBookid(int bookid) {
+        this.bookid = bookid;
+    }
+    
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
-    }    
+    }   
+    
+    
         
     public void loadData(int id){
         
-        bookid = id;
-        System.out.println(bookid);
-        ResultSet selectedSet = db.select("SELECT * FROM books where bid='"+bookid+"' LIMIT 1");
+        this.setBookid(id);
+        ResultSet selectedSet = db.select("SELECT * FROM books where bid='"+this.getBookid()+"' LIMIT 1");
         
         try{
             while(selectedSet.next()){
@@ -101,7 +113,8 @@ public class BookEditController implements Initializable {
                 txtBookRating.textProperty().set(selectedSet.getString("bookrating"));
                 txtBookStatus.textProperty().set(selectedSet.getString("bookstatus"));
                 txtBookYear.textProperty().set(selectedSet.getString("bookyear"));
-                
+                lblBookId.setVisible(false);
+                lblBookId.setText(Integer.toString(bookid));
             }
         }catch(SQLException sqlex){
             sqlex.printStackTrace();
@@ -119,12 +132,14 @@ public class BookEditController implements Initializable {
         
         if(userResponse.get() == ButtonType.OK){
             
-            String query ="UPDATE books SET booktitle="+txtBookTitle.getText()+", "
-                    + "bookauthour="+txtBookAuthour.getText()+", "
-                    + "bookyear="+txtBookYear.getText()+", "
+            String query ="UPDATE books SET booktitle = '"+txtBookTitle.getText()+"', "
+                    + "bookauthour='"+txtBookAuthour.getText()+"', "
+                    + "bookyear='"+txtBookYear.getText()+"', "
                     + "bookprice="+Float.parseFloat(txtBookPrice.getText())+", "
-                    + "bookrating="+txtBookRating.getText()+", "
-                    + "bookstatus="+Integer.parseInt(txtBookStatus.getText())+" WHERE bid="+bookid;
+                    + "bookrating='"+txtBookRating.getText()+"', "
+                    + "bookstatus="+Integer.parseInt(txtBookStatus.getText())+" WHERE bid="+this.getBookid();
+            
+            System.out.println(query);
         
             int result = db.edit(query);
         
