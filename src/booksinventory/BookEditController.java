@@ -89,11 +89,11 @@ public class BookEditController implements Initializable {
     public void loadData(int id){
         
         bookid = id;
-        
+        System.out.println(bookid);
         ResultSet selectedSet = db.select("SELECT * FROM books where bid='"+bookid+"' LIMIT 1");
-   
+        
         try{
-            do{
+            while(selectedSet.next()){
                 System.out.println(selectedSet.getRow());
                 txtBookTitle.textProperty().set(selectedSet.getString("booktitle"));
                 txtBookAuthour.textProperty().set(selectedSet.getString("bookauthour"));
@@ -102,7 +102,7 @@ public class BookEditController implements Initializable {
                 txtBookStatus.textProperty().set(selectedSet.getString("bookstatus"));
                 txtBookYear.textProperty().set(selectedSet.getString("bookyear"));
                 
-            }while(selectedSet.next());
+            }
         }catch(SQLException sqlex){
             sqlex.printStackTrace();
         }

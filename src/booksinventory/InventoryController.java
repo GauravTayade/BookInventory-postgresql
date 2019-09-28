@@ -241,17 +241,16 @@ public class InventoryController implements Initializable {
     private void btnEditBookClick(ActionEvent event) {
      
         try{
-            Parent parent = FXMLLoader.load(getClass().getResource("BookEdit.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("BookEdit.fxml"));
+            Parent parent = (Parent) loader.load();
             Scene scene = new Scene(parent);
-            BookEditController ctrl = new BookEditController();
+            BookEditController ctrl = loader.getController();
             ctrl.loadData(tblBooksInventory.getSelectionModel().getSelectedItem().getId());
-            FXMLLoader fxmlloader = new FXMLLoader();
-            fxmlloader.setController(ctrl);
             Stage addBookWindows;
             addBookWindows = (Stage)((Node)event.getSource()).getScene().getWindow();
             addBookWindows.setScene(scene);
             addBookWindows.show();
-            
+          
         }catch(IOException ioex){
             ioex.printStackTrace();
         }
