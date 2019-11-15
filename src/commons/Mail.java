@@ -21,7 +21,7 @@ public class Mail {
 
     private static final String SMTP_SERVER = "smtp server";
     private static final String USERNAME = "taydegauravb@gmail.com";
-    private static final String PASSWORD = "$Mightyrose9019";
+    private static final String PASSWORD = "";
     
     private static final String EMAIL_FROM = "taydegauravb@gmail.com";
     private static final String EMAIL_TO = "tayadegaurav@outlook.com";
